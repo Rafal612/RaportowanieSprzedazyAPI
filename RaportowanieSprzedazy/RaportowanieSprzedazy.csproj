@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -187,7 +193,47 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812291725367_DodaniePierwszegoModeluPracownik.cs" />
+    <Compile Include="Migrations\201812291725367_DodaniePierwszegoModeluPracownik.Designer.cs">
+      <DependentUpon>201812291725367_DodaniePierwszegoModeluPracownik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291744323_DodanieProjektuIAnkiety.cs" />
+    <Compile Include="Migrations\201812291744323_DodanieProjektuIAnkiety.Designer.cs">
+      <DependentUpon>201812291744323_DodanieProjektuIAnkiety.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291753292_PoprawienieRelacjiProjektPracownikNaManyToMany.cs" />
+    <Compile Include="Migrations\201812291753292_PoprawienieRelacjiProjektPracownikNaManyToMany.Designer.cs">
+      <DependentUpon>201812291753292_PoprawienieRelacjiProjektPracownikNaManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291901209_DodanieOdpowiedziIPowiazanZPytaniemPracownikiem.cs" />
+    <Compile Include="Migrations\201812291901209_DodanieOdpowiedziIPowiazanZPytaniemPracownikiem.Designer.cs">
+      <DependentUpon>201812291901209_DodanieOdpowiedziIPowiazanZPytaniemPracownikiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291908167_PoprawaOdpowiedziIPowiazanZPytaniemPracownikiem.cs" />
+    <Compile Include="Migrations\201812291908167_PoprawaOdpowiedziIPowiazanZPytaniemPracownikiem.Designer.cs">
+      <DependentUpon>201812291908167_PoprawaOdpowiedziIPowiazanZPytaniemPracownikiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812292323390_ZamianaZWieluNaJedenOdpowiedzPracownik.cs" />
+    <Compile Include="Migrations\201812292323390_ZamianaZWieluNaJedenOdpowiedzPracownik.Designer.cs">
+      <DependentUpon>201812292323390_ZamianaZWieluNaJedenOdpowiedzPracownik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812292332321_DodaniePodstawowychAndnotacjiDoMOdeli.cs" />
+    <Compile Include="Migrations\201812292332321_DodaniePodstawowychAndnotacjiDoMOdeli.Designer.cs">
+      <DependentUpon>201812292332321_DodaniePodstawowychAndnotacjiDoMOdeli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812292355539_POprawkiRealcjiPytanieOdpowiedzPracownik.cs" />
+    <Compile Include="Migrations\201812292355539_POprawkiRealcjiPytanieOdpowiedzPracownik.Designer.cs">
+      <DependentUpon>201812292355539_POprawkiRealcjiPytanieOdpowiedzPracownik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Ankieta.cs" />
+    <Compile Include="Models\Odpowiedz.cs" />
+    <Compile Include="Models\Pracownik.cs" />
+    <Compile Include="Models\Projekt.cs" />
+    <Compile Include="Models\Pytanie.cs" />
+    <Compile Include="Models\Stanowisko.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaportowanieSprzedazyContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -228,9 +274,12 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -245,7 +294,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -275,6 +323,32 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812291725367_DodaniePierwszegoModeluPracownik.resx">
+      <DependentUpon>201812291725367_DodaniePierwszegoModeluPracownik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291744323_DodanieProjektuIAnkiety.resx">
+      <DependentUpon>201812291744323_DodanieProjektuIAnkiety.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291753292_PoprawienieRelacjiProjektPracownikNaManyToMany.resx">
+      <DependentUpon>201812291753292_PoprawienieRelacjiProjektPracownikNaManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291901209_DodanieOdpowiedziIPowiazanZPytaniemPracownikiem.resx">
+      <DependentUpon>201812291901209_DodanieOdpowiedziIPowiazanZPytaniemPracownikiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291908167_PoprawaOdpowiedziIPowiazanZPytaniemPracownikiem.resx">
+      <DependentUpon>201812291908167_PoprawaOdpowiedziIPowiazanZPytaniemPracownikiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812292323390_ZamianaZWieluNaJedenOdpowiedzPracownik.resx">
+      <DependentUpon>201812292323390_ZamianaZWieluNaJedenOdpowiedzPracownik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812292332321_DodaniePodstawowychAndnotacjiDoMOdeli.resx">
+      <DependentUpon>201812292332321_DodaniePodstawowychAndnotacjiDoMOdeli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812292355539_POprawkiRealcjiPytanieOdpowiedzPracownik.resx">
+      <DependentUpon>201812292355539_POprawkiRealcjiPytanieOdpowiedzPracownik.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

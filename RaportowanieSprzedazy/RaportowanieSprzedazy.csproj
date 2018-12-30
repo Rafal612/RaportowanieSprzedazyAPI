@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -55,6 +58,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -158,6 +164,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\MappingProfile.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
@@ -188,8 +195,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\API\ProjektController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DTO\ProjektDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,12 +234,37 @@
     <Compile Include="Migrations\201812292355539_POprawkiRealcjiPytanieOdpowiedzPracownik.Designer.cs">
       <DependentUpon>201812292355539_POprawkiRealcjiPytanieOdpowiedzPracownik.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812301128372_PoprawaRealacjiPytanieOdpowiedzPracownik.cs" />
+    <Compile Include="Migrations\201812301128372_PoprawaRealacjiPytanieOdpowiedzPracownik.Designer.cs">
+      <DependentUpon>201812301128372_PoprawaRealacjiPytanieOdpowiedzPracownik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812301140407_PoprawaIndexuPytanieOdpowiedzPracownik.cs" />
+    <Compile Include="Migrations\201812301140407_PoprawaIndexuPytanieOdpowiedzPracownik.Designer.cs">
+      <DependentUpon>201812301140407_PoprawaIndexuPytanieOdpowiedzPracownik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812301141443_DodanieIndexuPytanieOdpowiedzPracownik.cs" />
+    <Compile Include="Migrations\201812301141443_DodanieIndexuPytanieOdpowiedzPracownik.Designer.cs">
+      <DependentUpon>201812301141443_DodanieIndexuPytanieOdpowiedzPracownik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812301153199_usnienicieIndexuDodanieRodzaiPytan.cs" />
+    <Compile Include="Migrations\201812301153199_usnienicieIndexuDodanieRodzaiPytan.Designer.cs">
+      <DependentUpon>201812301153199_usnienicieIndexuDodanieRodzaiPytan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812301548139_DodanieRodzajiStanowiskInsertami.cs" />
+    <Compile Include="Migrations\201812301548139_DodanieRodzajiStanowiskInsertami.Designer.cs">
+      <DependentUpon>201812301548139_DodanieRodzajiStanowiskInsertami.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812301609567_DodanieRodzjePytan.cs" />
+    <Compile Include="Migrations\201812301609567_DodanieRodzjePytan.Designer.cs">
+      <DependentUpon>201812301609567_DodanieRodzjePytan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ankieta.cs" />
     <Compile Include="Models\Odpowiedz.cs" />
     <Compile Include="Models\Pracownik.cs" />
     <Compile Include="Models\Projekt.cs" />
     <Compile Include="Models\Pytanie.cs" />
+    <Compile Include="Models\RodzajPytania.cs" />
     <Compile Include="Models\Stanowisko.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RaportowanieSprzedazyContext.cs" />
@@ -348,6 +382,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812292355539_POprawkiRealcjiPytanieOdpowiedzPracownik.resx">
       <DependentUpon>201812292355539_POprawkiRealcjiPytanieOdpowiedzPracownik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812301128372_PoprawaRealacjiPytanieOdpowiedzPracownik.resx">
+      <DependentUpon>201812301128372_PoprawaRealacjiPytanieOdpowiedzPracownik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812301140407_PoprawaIndexuPytanieOdpowiedzPracownik.resx">
+      <DependentUpon>201812301140407_PoprawaIndexuPytanieOdpowiedzPracownik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812301141443_DodanieIndexuPytanieOdpowiedzPracownik.resx">
+      <DependentUpon>201812301141443_DodanieIndexuPytanieOdpowiedzPracownik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812301153199_usnienicieIndexuDodanieRodzaiPytan.resx">
+      <DependentUpon>201812301153199_usnienicieIndexuDodanieRodzaiPytan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812301548139_DodanieRodzajiStanowiskInsertami.resx">
+      <DependentUpon>201812301548139_DodanieRodzajiStanowiskInsertami.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812301609567_DodanieRodzjePytan.resx">
+      <DependentUpon>201812301609567_DodanieRodzjePytan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

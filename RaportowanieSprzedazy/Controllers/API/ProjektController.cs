@@ -61,7 +61,7 @@ namespace RaportowanieSprzedazy.Controllers.API
         public IHttpActionResult  PutProjekt(int id, ProjektDto projektDto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
             
             Projekt projekt = _context.Projekty.Where(w => w.Id == id).SingleOrDefault();
             if (projekt == null)
@@ -85,12 +85,9 @@ namespace RaportowanieSprzedazy.Controllers.API
                 return NotFound();
 
             _context.Projekty.Remove(projekt);
-
             _context.SaveChanges();
+
             return Ok();
-
         }
-
-
     }
 }

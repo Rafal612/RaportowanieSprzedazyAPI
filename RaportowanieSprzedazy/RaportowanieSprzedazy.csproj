@@ -258,6 +258,10 @@
     <Compile Include="Migrations\201812301609567_DodanieRodzjePytan.Designer.cs">
       <DependentUpon>201812301609567_DodanieRodzjePytan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901022221128_DodanieTestowegoProjektu.cs" />
+    <Compile Include="Migrations\201901022221128_DodanieTestowegoProjektu.Designer.cs">
+      <DependentUpon>201901022221128_DodanieTestowegoProjektu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ankieta.cs" />
     <Compile Include="Models\Odpowiedz.cs" />
@@ -400,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812301609567_DodanieRodzjePytan.resx">
       <DependentUpon>201812301609567_DodanieRodzjePytan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901022221128_DodanieTestowegoProjektu.resx">
+      <DependentUpon>201901022221128_DodanieTestowegoProjektu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -24,6 +24,9 @@ namespace RaportowanieSprzedazy.App_Start
             CreateMap<Pytanie, PytanieDto>();
             CreateMap<PytanieDto, Pytanie>();
 
+            CreateMap<Odpowiedz, OdpowiedzDto>();
+            CreateMap<OdpowiedzDto, Odpowiedz>();
+
         }
     }
 }

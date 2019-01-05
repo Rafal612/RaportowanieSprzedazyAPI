@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace RaportowanieSprzedazy.Models
+namespace RaportowanieSprzedazy.DTO
 {
-    public class RodzajPytania
+    public class RodzjaPytaniaDto
     {
         public int Id { get; set; }
         [Required]

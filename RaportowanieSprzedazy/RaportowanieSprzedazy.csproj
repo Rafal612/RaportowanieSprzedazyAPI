@@ -196,15 +196,21 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\API\AnkietaController.cs" />
+    <Compile Include="Controllers\API\OdpowiedzController.cs" />
     <Compile Include="Controllers\API\PracownikController.cs" />
     <Compile Include="Controllers\API\ProjektController.cs" />
     <Compile Include="Controllers\API\PytanieController.cs" />
+    <Compile Include="Controllers\API\RodzajPytaniaController.cs" />
+    <Compile Include="Controllers\API\StanowiskoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DTO\AnkietaDto.cs" />
+    <Compile Include="DTO\OdpowiedzDto.cs" />
     <Compile Include="DTO\PracownikDto.cs" />
     <Compile Include="DTO\ProjektDto.cs" />
     <Compile Include="DTO\PytanieDto.cs" />
+    <Compile Include="DTO\RodzjaPytaniaDto.cs" />
+    <Compile Include="DTO\StanowiskoDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -275,6 +281,10 @@
     <Compile Include="Migrations\201901051143087_DodanieFKProjektuWTabeliAnkieta.cs" />
     <Compile Include="Migrations\201901051143087_DodanieFKProjektuWTabeliAnkieta.Designer.cs">
       <DependentUpon>201901051143087_DodanieFKProjektuWTabeliAnkieta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901051258598_DodanieWymaganegoNazwyWRodzajuPytania.cs" />
+    <Compile Include="Migrations\201901051258598_DodanieWymaganegoNazwyWRodzajuPytania.Designer.cs">
+      <DependentUpon>201901051258598_DodanieWymaganegoNazwyWRodzajuPytania.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ankieta.cs" />
@@ -427,6 +437,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901051143087_DodanieFKProjektuWTabeliAnkieta.resx">
       <DependentUpon>201901051143087_DodanieFKProjektuWTabeliAnkieta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901051258598_DodanieWymaganegoNazwyWRodzajuPytania.resx">
+      <DependentUpon>201901051258598_DodanieWymaganegoNazwyWRodzajuPytania.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -19,13 +19,13 @@ namespace RaportowanieSprzedazy.Controllers.API
             _context = new RaportowanieSprzedazyContext();
         }
 
-        //GET /api/projekty
+        //GET /api/projekt
         public IHttpActionResult GetProjekty()
         {
             return Ok(_context.Projekty.ToList().Select(Mapper.Map<Projekt, ProjektDto>));
         }
 
-        // GET /api/projekty/1
+        // GET /api/projekt/1
         public IHttpActionResult GetProjekt(int id)
         {
             Projekt projekt = _context.Projekty.Where(w => w.Id == id).SingleOrDefault();
@@ -36,7 +36,7 @@ namespace RaportowanieSprzedazy.Controllers.API
             return  Ok(Mapper.Map<Projekt, ProjektDto>(projekt));
         }
 
-        // POST /api/projekty
+        // POST /api/projekt
         [HttpPost]
         public IHttpActionResult PostProjekt(ProjektDto projektDto)
         {
@@ -56,7 +56,7 @@ namespace RaportowanieSprzedazy.Controllers.API
         }
 
 
-        //PUT /api/projekty/1
+        //PUT /api/projekt/1
         [HttpPut]
         public IHttpActionResult  PutProjekt(int id, ProjektDto projektDto)
         {
@@ -76,7 +76,7 @@ namespace RaportowanieSprzedazy.Controllers.API
             return Ok();
         }
 
-        //DELETE /api/projekty/1
+        //DELETE /api/projekt/1
         [HttpDelete]
         public IHttpActionResult DeleteProjekt(int id)
         {

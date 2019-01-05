@@ -15,6 +15,15 @@ namespace RaportowanieSprzedazy.App_Start
             CreateMap<Projekt, ProjektDto>();
             CreateMap<ProjektDto, Projekt>();
 
+            CreateMap<Pracownik, PracownikDto>();
+            CreateMap<PracownikDto, Pracownik>();
+
+            CreateMap<Ankieta,AnkietaDto>();
+            CreateMap<AnkietaDto, Ankieta>();
+
+            CreateMap<Pytanie, PytanieDto>();
+            CreateMap<PytanieDto, Pytanie>();
+
         }
     }
 }

@@ -51,7 +51,7 @@ namespace RaportowanieSprzedazy.Controllers.API
 
             _context.Pracownicy.Add(pracownik);
             _context.SaveChanges();
-
+            pracownikDto.Id = pracownik.Id;
             return Created(new Uri(Request.RequestUri + "/" + pracownik.Id), pracownikDto);
         }
 
@@ -68,6 +68,7 @@ namespace RaportowanieSprzedazy.Controllers.API
 
             pracownikDto.Id = pracownik.Id;
             Mapper.Map(pracownikDto, pracownik);
+            _context.SaveChanges();
 
             return Ok();
         }

@@ -195,12 +195,16 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\API\AnkietaController.cs" />
     <Compile Include="Controllers\API\PracownikController.cs" />
     <Compile Include="Controllers\API\ProjektController.cs" />
+    <Compile Include="Controllers\API\PytanieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DTO\AnkietaDto.cs" />
     <Compile Include="DTO\PracownikDto.cs" />
     <Compile Include="DTO\ProjektDto.cs" />
+    <Compile Include="DTO\PytanieDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -263,6 +267,14 @@
     <Compile Include="Migrations\201901022221128_DodanieTestowegoProjektu.cs" />
     <Compile Include="Migrations\201901022221128_DodanieTestowegoProjektu.Designer.cs">
       <DependentUpon>201901022221128_DodanieTestowegoProjektu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901042016000_DdoanieTestowegoPracownika.cs" />
+    <Compile Include="Migrations\201901042016000_DdoanieTestowegoPracownika.Designer.cs">
+      <DependentUpon>201901042016000_DdoanieTestowegoPracownika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901051143087_DodanieFKProjektuWTabeliAnkieta.cs" />
+    <Compile Include="Migrations\201901051143087_DodanieFKProjektuWTabeliAnkieta.Designer.cs">
+      <DependentUpon>201901051143087_DodanieFKProjektuWTabeliAnkieta.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ankieta.cs" />
@@ -409,6 +421,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901022221128_DodanieTestowegoProjektu.resx">
       <DependentUpon>201901022221128_DodanieTestowegoProjektu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901042016000_DdoanieTestowegoPracownika.resx">
+      <DependentUpon>201901042016000_DdoanieTestowegoPracownika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901051143087_DodanieFKProjektuWTabeliAnkieta.resx">
+      <DependentUpon>201901051143087_DodanieFKProjektuWTabeliAnkieta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

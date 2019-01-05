@@ -1,12 +1,13 @@
-﻿using System;
+﻿using RaportowanieSprzedazy.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace RaportowanieSprzedazy.Models
+namespace RaportowanieSprzedazy.DTO
 {
-    public class Pytanie
+    public class PytanieDto
     {
 
         public int Id { get; set; }
@@ -18,6 +19,5 @@ namespace RaportowanieSprzedazy.Models
         [Required]
         public Ankieta Ankieta { get; set; }
         public IList<Odpowiedz> Odpowiedzi { get; set; }
-        //public IList<Pracownik> Pracownicy{ get; set; }
     }
 }

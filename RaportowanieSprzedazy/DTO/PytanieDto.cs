@@ -12,12 +12,12 @@ namespace RaportowanieSprzedazy.DTO
 
         public int Id { get; set; }
         [Required]
-        public RodzajPytania RodzajPytania { get; set; }
+        public RodzajPytaniaDto RodzajPytaniaDto { get; set; }
         [Required]
         [MaxLength(240)]
         public string Tresc { get; set; }
         [Required]
-        public Ankieta Ankieta { get; set; }
-        public IList<Odpowiedz> Odpowiedzi { get; set; }
+        public AnkietaDto AnkietaDto { get; set; }
+        public IList<OdpowiedzDto> OdpowiedziDto { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace RaportowanieSprzedazy.DTO
 {
-    public class RodzjaPytaniaDto
+    public class RodzajPytaniaDto
     {
         public int Id { get; set; }
         [Required]

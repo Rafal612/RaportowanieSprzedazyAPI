@@ -11,9 +11,9 @@ namespace RaportowanieSprzedazy.DTO
     {
         public int Id { get; set; }
         [Required]
-        public Pytanie Pytanie { get; set; }
+        public PytanieDto PytanieDto { get; set; }
         [Required]
-        public Pracownik Pracownik { get; set; }
+        public PracownikDto PracownikDto { get; set; }
         public string TrescString { get; set; }
         public double TrescDouble { get; set; }
         public int TrescInt { get; set; }

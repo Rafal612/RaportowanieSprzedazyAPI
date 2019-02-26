@@ -22,7 +22,7 @@ namespace RaportowanieSprzedazy.Controllers.API
         //GET /api/rodzajpytania
         public IHttpActionResult GetRodzajePytan()
         {
-            return Ok(_context.RodzajePytan.ToList().Select(Mapper.Map<RodzajPytania, RodzjaPytaniaDto>));
+            return Ok(_context.RodzajePytan.ToList().Select(Mapper.Map<RodzajPytania, RodzajPytaniaDto>));
         }
 
         // GET /api/rodzajpytania/1
@@ -33,19 +33,19 @@ namespace RaportowanieSprzedazy.Controllers.API
             if (rodzajPytania == null)
                 return NotFound();
 
-            return Ok(Mapper.Map<RodzajPytania, RodzjaPytaniaDto>(rodzajPytania));
+            return Ok(Mapper.Map<RodzajPytania, RodzajPytaniaDto>(rodzajPytania));
         }
 
         // POST /api/rodzajpytania
         [HttpPost]
-        public IHttpActionResult PostRodzajPytania(RodzjaPytaniaDto rodzajPytaniaDto)
+        public IHttpActionResult PostRodzajPytania(RodzajPytaniaDto rodzajPytaniaDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
             if (rodzajPytaniaDto == null)
                 return BadRequest();
 
-            RodzajPytania rodzajPytania = Mapper.Map<RodzjaPytaniaDto, RodzajPytania>(rodzajPytaniaDto);
+            RodzajPytania rodzajPytania = Mapper.Map<RodzajPytaniaDto, RodzajPytania>(rodzajPytaniaDto);
 
             _context.RodzajePytan.Add(rodzajPytania);
             _context.SaveChanges();
@@ -58,7 +58,7 @@ namespace RaportowanieSprzedazy.Controllers.API
 
         //PUT /api/rodzajpytania/1
         [HttpPut]
-        public IHttpActionResult PutRodzajPytania(int id, RodzjaPytaniaDto rodzajPytaniaDto)
+        public IHttpActionResult PutRodzajPytania(int id, RodzajPytaniaDto rodzajPytaniaDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();

@@ -209,7 +209,7 @@
     <Compile Include="DTO\PracownikDto.cs" />
     <Compile Include="DTO\ProjektDto.cs" />
     <Compile Include="DTO\PytanieDto.cs" />
-    <Compile Include="DTO\RodzjaPytaniaDto.cs" />
+    <Compile Include="DTO\RodzajPytaniaDto.cs" />
     <Compile Include="DTO\StanowiskoDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -285,6 +285,18 @@
     <Compile Include="Migrations\201901051258598_DodanieWymaganegoNazwyWRodzajuPytania.cs" />
     <Compile Include="Migrations\201901051258598_DodanieWymaganegoNazwyWRodzajuPytania.Designer.cs">
       <DependentUpon>201901051258598_DodanieWymaganegoNazwyWRodzajuPytania.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901051429367_DodaniePolaIntJakoFKStanowiskaWTabeliPracownik.cs" />
+    <Compile Include="Migrations\201901051429367_DodaniePolaIntJakoFKStanowiskaWTabeliPracownik.Designer.cs">
+      <DependentUpon>201901051429367_DodaniePolaIntJakoFKStanowiskaWTabeliPracownik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901051434170_DodaniePolaIntJakoFKStanowiskaWTabeliPracownikPoprawka.cs" />
+    <Compile Include="Migrations\201901051434170_DodaniePolaIntJakoFKStanowiskaWTabeliPracownikPoprawka.Designer.cs">
+      <DependentUpon>201901051434170_DodaniePolaIntJakoFKStanowiskaWTabeliPracownikPoprawka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901051535330_DodaniePolaIdProjektowNapracowniku.cs" />
+    <Compile Include="Migrations\201901051535330_DodaniePolaIdProjektowNapracowniku.Designer.cs">
+      <DependentUpon>201901051535330_DodaniePolaIdProjektowNapracowniku.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ankieta.cs" />
@@ -440,6 +452,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901051258598_DodanieWymaganegoNazwyWRodzajuPytania.resx">
       <DependentUpon>201901051258598_DodanieWymaganegoNazwyWRodzajuPytania.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901051429367_DodaniePolaIntJakoFKStanowiskaWTabeliPracownik.resx">
+      <DependentUpon>201901051429367_DodaniePolaIntJakoFKStanowiskaWTabeliPracownik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901051434170_DodaniePolaIntJakoFKStanowiskaWTabeliPracownikPoprawka.resx">
+      <DependentUpon>201901051434170_DodaniePolaIntJakoFKStanowiskaWTabeliPracownikPoprawka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901051535330_DodaniePolaIdProjektowNapracowniku.resx">
+      <DependentUpon>201901051535330_DodaniePolaIdProjektowNapracowniku.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

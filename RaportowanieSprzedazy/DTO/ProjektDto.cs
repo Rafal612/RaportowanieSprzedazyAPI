@@ -14,7 +14,7 @@ namespace RaportowanieSprzedazy.DTO
         [MaxLength(120)]
         public string Nazwa { get; set; }
 
-        public IList<Pracownik> Pracownicy { get; set; }
-        public IList<Ankieta> Ankiety { get; set; }
+        public IList<int> PracownicyDtoId { get; set; }
+        public IList<int> AnkietyDtoId { get; set; }
     }
 }

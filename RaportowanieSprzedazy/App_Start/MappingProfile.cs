@@ -27,6 +27,10 @@ namespace RaportowanieSprzedazy.App_Start
             CreateMap<Odpowiedz, OdpowiedzDto>();
             CreateMap<OdpowiedzDto, Odpowiedz>();
 
+            CreateMap<Stanowisko, StanowiskoDto>();
+            CreateMap<StanowiskoDto, Stanowisko>();
+
+
         }
     }
 }

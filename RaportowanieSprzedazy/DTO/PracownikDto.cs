@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -19,7 +20,12 @@ namespace RaportowanieSprzedazy.DTO
         [Required]
         [MaxLength(120)]
         public string Nazwisko { get; set; }
-        public Stanowisko Stanowisko { get; set; }
-        public IList<Projekt> Projekty { get; set; }
+        [ForeignKey("Stanowisko")]
+        [Required]
+        public int StanowiskoId { get; set; }
+        [ForeignKey("Projekty")]
+        [Required]
+        public IList<int> ProjektyId { get; set; }
+
     }
 }
